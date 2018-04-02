@@ -22,6 +22,8 @@ defmodule Discuss.Router do
   end
 
   scope "/auth", Discuss do
+    pipe_through :browser # Use the default browser stack
+
     get "/:provider", AuthController, :request
     get "/:provider/callback", AuthController, :callback
 
