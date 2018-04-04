@@ -12,6 +12,14 @@ defmodule Discuss.AuthController do
     sign_in(conn, changeset)
   end
 
+  def signout(conn, _params) do
+        # IO.puts("+++++++")
+        # IO.inspect(conn.assigns)
+        # conn
+        # |> configure_session(drop: true)
+        # |> redirect(to: topic_path(conn, :index))
+  end
+
   def sign_in(conn, changeset) do
     case insert_or_update(changeset) do
       {:ok, user} ->
